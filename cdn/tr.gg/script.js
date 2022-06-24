@@ -4,7 +4,7 @@ if (window.location.pathname.includes(".htm")) {
 
 document.addEventListener("DOMContentLoaded", function () {
     function remove(elem) {
-        elem = document.querySelector("elem");
+        elem = document.querySelector(elem);
         
         if (elem)
             elem.remove();
