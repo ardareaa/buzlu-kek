@@ -105,7 +105,10 @@ class Form {
     }
 }
 
+window.Form = Form;
 
+
+document.addEventListener("DOMContentLoaded", function () {
 let c = init("canvas"),
     w = (canvas.width = window.innerWidth),
     h = (canvas.height = window.innerHeight);
@@ -202,3 +205,4 @@ window.addEventListener("resize", function () {
 
 loop();
 setInterval(loop, 1000 / 60);
+});
