@@ -3,21 +3,30 @@ if (window.location.pathname.includes(".htm")) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    function remove(elem) {
+        elem = document.querySelector("elem");
+        
+        if (elem)
+            elem.remove();
+        else
+            console.error("Element bulunamadı!");
+    }
+    
     document.title = "ViiiLabs";
-    document.querySelector("body > style")?.remove();
+    remove("body > style");
     document.body.innerHTML = document.querySelector("#content").innerHTML;
     document.body.style = "margin:0;";
     document.body.removeAttribute("id");
 
     window.checkerAddons = function () {
-        document.body.querySelector("#title")?.remove();
-        document.querySelector("#selfpromotionOverlay")?.remove();
-        document.querySelector("#extraDiv1")?.remove();
-        document.querySelector("#extraDiv2")?.remove();
-        document.querySelector("#extraDiv3")?.remove();
-        document.querySelector("#extraDiv4")?.remove();
-        document.querySelector("#extraDiv5")?.remove();
-        document.querySelector("#extraDiv6")?.remove();
+        remove("#title");
+        remove("#selfpromotionOverlay");
+        remove("#extraDiv1");
+        remove("#extraDiv2");
+        remove("#extraDiv3");
+        remove("#extraDiv4");
+        remove("#extraDiv5");
+        remove("#extraDiv6");
 
         if (document.querySelector("#content > #container"))
             if (document.querySelector("#content > #container #content"))
@@ -55,19 +64,23 @@ class Form {
 
                 if (response.ok) {
                     callback(null, result);
-                    this._result?.innerHTML = "Form başarıyla gönderildi!";
+                    if (this._result)
+                        this._result.innerHTML = "Form başarıyla gönderildi!";
                 } else {
                     response.json().then(data => {
                         callback(data.errors, result);
                         if (Object.hasOwn(data, 'errors')) {
-                            this._result?.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                            if (this._result)
+                                this._result.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                         } else {
-                            this._result?.innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
+                            if (this._result)
+                                this._result?.innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
                         }
                     })
                 }
             }).catch(error => {
-                this._result?.innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
+                if (this._result)
+                    this._result.innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
             });
         })
     }
