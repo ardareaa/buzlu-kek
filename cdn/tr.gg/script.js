@@ -72,7 +72,7 @@ class Form {
                                 this._result.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                         } else {
                             if (this._result)
-                                this._result?.innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
+                                this._result.innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
                         }
                     })
                 }
