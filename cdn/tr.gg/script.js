@@ -55,19 +55,19 @@ class Form {
 
                 if (response.ok) {
                     callback(null, result);
-                    this._result ? .innerHTML = "Form başarıyla gönderildi!";
+                    this._result?.innerHTML = "Form başarıyla gönderildi!";
                 } else {
                     response.json().then(data => {
                         callback(data.errors, result);
                         if (Object.hasOwn(data, 'errors')) {
-                            this._result ? .innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                            this._result?.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                         } else {
-                            this._result ? .innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
+                            this._result?.innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
                         }
                     })
                 }
             }).catch(error => {
-                this._result ? .innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
+                this._result?.innerHTML = "Oops! İşlem yapılırken bir sorun oluştu!";
             });
         })
     }
