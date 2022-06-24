@@ -1,5 +1,5 @@
 if (window.location.pathname.includes(".htm")) {
-    window.location.href = "/#!" + window.location.pathname.replace(".htm", '');
+    window.location.href = "/#!" + window.location.pathname.replace(/.htm|.html/g, '');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
