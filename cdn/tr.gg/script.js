@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
         
         if (elem)
             elem.remove();
-        else
-            console.error("Element bulunamadı!");
     }
     
     document.title = "ViiiLabs";
