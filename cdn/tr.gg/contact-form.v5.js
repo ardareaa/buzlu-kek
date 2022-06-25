@@ -33,6 +33,10 @@ function ContactFormInit() {
                     type: "POST",
                     url: "https://formspree.io/f/mjvldewk",
                     data: $(form).serialize(),
+                    dataType: 'json',
+                    headers: {
+                        'Accept': 'application/json'
+                    }
 
                     beforeSend: function () {
                         $submit.css('display', 'block').text(waitText);
