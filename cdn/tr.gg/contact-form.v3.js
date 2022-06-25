@@ -1,4 +1,4 @@
-window.addEventListener("hashchange", function () {
+function ContactFormInit() {
    if ($("#contactForm").length > 0 && window.location.hash.includes('contact')) {
         console.info("Form kuruldu!");
 
@@ -79,4 +79,7 @@ window.addEventListener("hashchange", function () {
 
         });
     }
-});
+}
+
+window.addEventListener("hashchange", ContactFormInit);
+ContactFormInit();
