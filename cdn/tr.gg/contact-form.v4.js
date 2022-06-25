@@ -1,5 +1,8 @@
 function ContactFormInit() {
    if ($("#contactForm").length > 0 && window.location.hash.includes('contact')) {
+      if (document.querySelector("#contactForm").classList.contains("initalized")) return;
+      document.querySelector("#contactForm").classList.add("initalized");
+      
         console.info("Form kuruldu!");
 
         $("#contactForm").validate({
@@ -79,6 +82,8 @@ function ContactFormInit() {
 
         });
     }
+   
+   setInterval(ContactFormInit, 3000);
 }
 
 window.addEventListener("hashchange", ContactFormInit);
