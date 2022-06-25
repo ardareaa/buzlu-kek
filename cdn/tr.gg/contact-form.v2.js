@@ -1,3 +1,4 @@
+if ($("#contactForm").length > 0) {
         console.info("Form kuruldu!");
 
         $("#contactForm").validate({
@@ -76,3 +77,4 @@
             }
 
         });
+}
