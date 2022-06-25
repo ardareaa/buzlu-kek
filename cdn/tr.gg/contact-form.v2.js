@@ -1,4 +1,5 @@
-if ($("#contactForm").length > 0) {
+window.addEventListener("hashchange", function () {
+   if ($("#contactForm").length > 0 && window.location.hash.includes('contact')) {
         console.info("Form kuruldu!");
 
         $("#contactForm").validate({
@@ -77,4 +78,5 @@ if ($("#contactForm").length > 0) {
             }
 
         });
-}
+    }
+});
