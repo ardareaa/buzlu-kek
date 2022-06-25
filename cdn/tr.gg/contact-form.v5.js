@@ -36,7 +36,7 @@ function ContactFormInit() {
                     dataType: 'json',
                     headers: {
                         'Accept': 'application/json'
-                    }
+                    },
 
                     beforeSend: function () {
                         $submit.css('display', 'block').text(waitText);
